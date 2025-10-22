@@ -1,6 +1,8 @@
 # HyperSol
 Personal Arch Linux Hyprland environment and apps configuration script, files, and assets.
 
+This is forked from HyperSol which is also created by me and will eventually just be moved this github account.
+
 ## Using Configuration
 Run setup.sh to start the configuration process. Use the `-f` flag to auto confirm all prompts.
 Durring the setup you will be prompted to run or skip the following parts of the script
