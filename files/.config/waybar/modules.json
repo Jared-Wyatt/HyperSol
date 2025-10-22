@@ -178,9 +178,10 @@
         "format-icons": ["", "", "", "", ""]        
     },
     "clock": {
-        "format": "{:%H:%M} ",
+        "format": "{:%I:%M %p} - {:%b %d, %Y}",
+		"interval": 30,
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%d-%m-%Y}"
+        "format-alt": "{:%I:%M %p}"
     },
     "power-profiles-daemon": {
 		"format": "{icon}",
