@@ -31,19 +31,8 @@
         "exec": "hyprctl clients -w -f"
         }
     },
- /*   "wlr/taskbar": {
-        "format": "{icon} {title:.17}",
-        "icon-size": 28,
-        "spacing": 3,
-        "on-click-middle": "close",
-        "tooltip-format": "{title}",
-        "ignore-list": [],
-        "on-click": "activate"
-    },
-    */
 	"hyprland/window": {
         "format": "{title}",
-        //"max-length": 30,
         "on-click": "hyprctl dispatch window_activate {id}",
         "on-scroll-up": "hyprctl dispatch window_raise {id}",
         "on-scroll-down": "hyprctl dispatch window_lower {id}",
@@ -68,7 +57,7 @@
 	"exec": "swaync-client -swb",
 	"on-click": "sleep 0.1 && swaync-client -t -sw",
 	"on-click-right": "swaync-client -d -sw",
-	"escape": true,
+	"escape": true
 },
 
 
@@ -106,7 +95,7 @@
 	"on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-",
 	"on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+",
 	"tooltip-format": "{source_desc} | {source_volume}%",
-	"scroll-step": 5,
+	"scroll-step": 5
 },
     "network": {
 	"format": "{ifname}",
@@ -178,7 +167,7 @@
         "format-icons": ["", "", "", "", ""]        
     },
     "clock": {
-        "format": "{:%I:%M %p} - {:%b %d, %Y}",
+        "format": "{:%b %d, %Y  %I:%M %p}",
 		"interval": 30,
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%I:%M %p}"
@@ -202,7 +191,7 @@
     },
     "tray": {
 	"icon-size": 20,
-	"spacing": 4,
+	"spacing": 4
 	},
 	"bluetooth": {
 	"format": "",
@@ -212,7 +201,7 @@
 	"tooltip-format-connected": "{device_enumerate}",
 	"tooltip-format-enumerate-connected": " {device_alias} 󰂄{device_battery_percentage}%",
 	"tooltip": true,
-	"on-click": "blueberry",
+	"on-click": "blueberry"
 },
 "backlight": {
 	"interval": 2,
@@ -228,8 +217,6 @@
 		"󰃟 ",
 		"󰃠 "
 	],
-	//"format": "{icon}",
-	//"format-icons": ["","","","","","","","","","","","","","",""],
 	"tooltip-format": "backlight {percent}%",
 	"icon-size": 10,
 	"on-click": "",
@@ -238,7 +225,7 @@
 	"on-update": "",
 	"on-scroll-up": "brightnessctl s +5%",
 	"on-scroll-down": "brightnessctl s 5%-",
-	"smooth-scrolling-threshold": 1,
+	"smooth-scrolling-threshold": 1
 },
 "mpris": {
 	"interval": 10,
@@ -259,15 +246,14 @@
 		"mopidy": "",
 		"mpv": "󰐹",
 		"spotify": "",
-		"vlc": "󰕼",
+		"vlc": "󰕼"
 	},
 	"status-icons": {
 		"paused": "󰐎",
 		"playing": "",
-		"stopped": "",
+		"stopped": ""
 	},
-	// "ignored-players": ["firefox"]
-	"max-length": 30,
+	"max-length": 30
 }
 
 }
