@@ -1,0 +1,9 @@
+width=800
+height=400
+location=top
+show=drun
+prompt=>
+allow_images=true
+insensitive=true
+hide_scroll=true
+no_actions=true

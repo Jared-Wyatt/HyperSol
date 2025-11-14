@@ -1,17 +1,13 @@
-@import "mocha.css";
+/* colors.css is imported on last line otherwise conflicts appear */
+
 * {
-    /* `otf-font-awesome` and SpaceMono Nerd Font are required to be installed for icons */
     font-family: "SpaceMono Nerd Font";
     font-size: 15px;
 }
 
+/* Remove border and background from main waybar window */
 window#waybar {
     background: transparent;
-    color: @teal;
-    border-radius: 7rem;
-    border-width: 2px;
-    border-style: solid;
-    border-color: @teal;
 }
 
 window#waybar.empty #window {
@@ -20,230 +16,191 @@ window#waybar.empty #window {
     border: 0px;
 }
 
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#backlight,
-#network,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#bluetooth,
-#mode,
-#idle_inhibitor,
-#scratchpad,
-#power-profiles-daemon,
-#language,
-#mpd {
-	background-color: transparent;
-    padding: 0 10px;
-    border-radius: 7rem;
-    /*border-width: 2px;
+tooltip 
+{ 
+    border-radius: 4px;
+}
+
+/* Tray icon hover */
+*:hover 
+{
+    border-radius: 4px;
+}
+
+/* Group 1 & 2 Combined: custom/arch + hyprland/workspaces */
+#custom-arch {
+    margin-left: 5px;
+    margin-right: 0;
+    padding: 0px 10px;
+    font-size: 20px;
+    border-radius: 4px 0 0 4px;
+    border-width: 1px;
     border-style: solid;
-    border-color: @teal;*/
+    border-right: none;
 }
-
-
-#clock:hover,
-#battery:hover,
-#cpu:hover,
-#memory:hover,
-#disk:hover,
-#temperature:hover,
-#backlight:hover,
-#network:hover,
-#pulseaudio:hover,
-#wireplumber:hover,
-#custom-media:hover,
-#tray:hover,
-#mode:hover,
-#bluetooth:hover,
-#idle_inhibitor:hover,
-#scratchpad:hover,
-#power-profiles-daemon:hover,
-#language:hover,
-#mpd:hover {
-    background-color: @maroon;
-    color: @brown;
-}
-
 
 #workspaces {
-  border-radius: 7rem;
-  background-color: transparent;
-  /*border-width: 2px;
-  border-style: solid;
-  border-color: @teal;*/
+    margin-right: 8px;
+    border-radius: 0 4px 4px 0;
+    border-width: 1px;
+    border-style: solid;
+    border-left: none;
+    padding: 3px;
 }
 
 #workspaces button {
-  color: @teal;
-  border-radius: 7rem;
+    border-radius: 4px;
+    padding: 0px 4px;
+    margin-right: 2px;
 }
 
 #workspaces button.active {
-  color: @brown;
-  background-color: @teal;
-  border-radius: 7rem;
+    border-radius: 4px;
 }
 
-#workspaces button:hover {
-  color: @brown;
-  background-color: @maroon;
-  border-radius: 7rem;
+/* Group 3: hyprland/window */
+#window {
+    margin-right: 8px;
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
+    padding: 0px 10px;
 }
 
-#custom-arch {
-    margin-left: 5px;
-    padding: 0 10px;
-    font-size: 25px;
-    background-color: transparent;
-    border-radius: 7rem;
-	/*border-width: 2px;
-	border-style: solid;
-	border-color: @teal;*/
+/* Group 4: cpu, memory, temperature, battery */
+#cpu,
+#memory,
+#temperature,
+#battery {
+    padding: 2px 10px;
+    margin: 0;
 }
-#custom-arch:hover {
-    background-color: @maroon;
-    color: @brown;
+
+#cpu {
+    border-radius: 4px 0 0 4px;
+    border-width: 1px;
+    border-style: solid;
+    border-right: none;
+    padding-left: 12px;
 }
-#custom-search {
-    padding: 0 10px;
-    font-size: 20px;
-    background-color: transparent;
-    border-radius: 7rem;
-	/*border-width: 2px;
-	border-style: solid;
-	border-color: @teal;*/
+
+#memory {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
 }
-#custom-search:hover {
-    background-color: @maroon;
-    color: @brown;
+
+#temperature {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
 }
-#custom-swaync {
-    padding: 0 10px;
-    background-color: transparent;
-    border-radius: 7rem;
-    /*border-width: 2px;
-	border-style: solid;
-	border-color: @teal;*/
+
+#battery {
+    border-radius: 0 4px 4px 0;
+    border-width: 1px;
+    border-style: solid;
+    border-left: none;
+    padding-right: 12px;
+    margin-right: 8px;
 }
-#custom-swaync:hover {
-    background-color: @maroon;
-    color: @brown;
+
+/* Group 5: idle_inhibitor, pulseaudio, backlight */
+#idle_inhibitor,
+#pulseaudio,
+#backlight {
+    padding: 2px 10px;
+    margin: 0;
 }
-#custom-power {
+
+#idle_inhibitor {
+    border-radius: 4px 0 0 4px;
+    border-width: 1px;
+    border-style: solid;
+    border-right: none;
+    padding-left: 12px;
+}
+
+#pulseaudio {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+
+#backlight {
+    border-radius: 0 4px 4px 0;
+    border-width: 1px;
+    border-style: solid;
+    border-left: none;
+    padding-right: 12px;
+    margin-right: 8px;
+}
+
+/* Group 6: network#speed */
+#network {
+    margin-right: 8px;
+    padding: 2px 10px;
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
+}
+
+/* Group 7: tray */
+#tray {
+    margin-right: 8px;
+    padding: 2px 10px;
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
+}
+
+/* Group 8: clock */
+#clock {
     margin-right: 5px;
-    padding: 0 10px;
-    background-color: transparent;
-    border-radius: 7rem;
-    /*border-width: 2px;
-	border-style: solid;
-	border-color: @teal;*/
-}
-#custom-power:hover {
-    background-color: @maroon;
-    color: @brown;
-}
-/*
-#taskbar {
+    padding: 2px 10px;
+    border-radius: 4px;
+    border-width: 1px;
+    border-style: solid;
 }
 
-#taskbar button {
-	border-radius: 7rem;
-	background: transparent;
-	border-width: 2px;
-	border-style: solid;
-	border-color: @teal;
-	margin-left: 2px;
-	margin-right: 2px;
-	padding-left: 8px;
-	padding-right: 8px;
-	color: @text;
-}
-
-#taskbar button.active {
-	border-radius: 7rem;
-	background-color: @surface0;
-	border-width: 2px;
-	border-style: solid;
-	border-color: @teal;
-}
-*/
-
-
-  #window {
-  border-radius: 7rem;
-  /*border-width: 2px;
-  border-style: solid;
-  border-color: @teal;*/
-  padding: 0 10px;
-  background-color: transparent;
-  color: @teal;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-#window:hover {
-    background-color: @maroon;
-    color: @brown;
-}
+/* Slider styles */
 #pulseaudio-slider slider {
-	min-width: 0px;
-	min-height: 0px;
-	opacity: 0;
-	background-image: none;
-	border: none;
-	box-shadow: none;
+    min-width: 0px;
+    min-height: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
 }
 
 #pulseaudio-slider trough {
-	min-width: 80px;
-	min-height: 5px;
-	border-radius: 5px;
+    min-width: 80px;
+    min-height: 5px;
+    border-radius: 4px;
+    background-color: rgba(0, 56, 44, 0.582);
 }
 
 #pulseaudio-slider highlight {
-	min-height: 10px;
-	border-radius: 5px;
+    min-height: 10px;
+    border-radius: 4px;
 }
 
 #backlight-slider slider {
-	min-width: 0px;
-	min-height: 0px;
-	opacity: 0;
-	background-image: none;
-	border: none;
-	box-shadow: none;
+    min-width: 0px;
+    min-height: 0px;
+    opacity: 0;
+    background-image: none;
+    border: none;
+    box-shadow: none;
 }
 
 #backlight-slider trough {
-	min-width: 80px;
-	min-height: 10px;
-	border-radius: 5px;
+    min-width: 80px;
+    min-height: 10px;
+    border-radius: 4px;
+    background-color: rgba(0, 56, 44, 0.582);
 }
 
 #backlight-slider highlight {
-	min-width: 10px;
-	border-radius: 5px;
+    min-width: 10px;
+    border-radius: 4px;
 }
 
-#mpris {
-	border-radius: 7rem;
-	background-color: transparent;
-	padding: 0 10px;
-	/*border-width: 2px;
-	border-style: solid;
-	border-color: @teal;*/
-}
-#mpris:hover {
-    background-color: @maroon;
-    color: @brown;
-}
-
-#custom-cava_mviz {
-	color: @pink;
-}
+@import "colors.css";
